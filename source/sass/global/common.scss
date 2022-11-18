@@ -1,0 +1,13 @@
+.section-title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile("font-size", 96, 28);
+  @include adaptiveDesktopToMobile("line-height", 96, 34);
+  margin: 0;
+}
+
+.section-title-sm {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile("font-size", 64, 36);
+  @include adaptiveDesktopToMobile("line-height", 72, 46);
+  margin: 0;
+}

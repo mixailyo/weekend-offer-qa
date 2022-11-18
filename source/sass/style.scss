@@ -15,6 +15,7 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/common";
 
 // Blocks
 // ---------------------------------
@@ -23,7 +24,14 @@
 @import "blocks/main-nav";
 @import "blocks/footer";
 @import "blocks/modal";
+@import "blocks/data-accordion";
 @import "blocks/btn";
+@import "blocks/process";
+@import "blocks/statistics";
+@import "blocks/qa";
+@import "blocks/benefits";
+@import "blocks/responsibilities";
+@import "blocks/teams";
 
 // ---------------------------------
 

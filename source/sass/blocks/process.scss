@@ -1,0 +1,123 @@
+.process {
+  @include adaptiveDesktopToMobile("margin-top", 100, 40);
+}
+.process__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto 1fr;
+  @include adaptiveDesktopToMobile("column-gap", 80, 0);
+
+  @include viewport--sm {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.process__title {
+  @include adaptiveDesktopToMobile("margin-bottom", 70, 32);
+  grid-column: span 2;
+
+  @include viewport--sm {
+    grid-column: auto;
+  }
+}
+.process__left-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include viewport--sm {
+    grid-row-start: 1;
+    margin-bottom: 24px;
+  }
+}
+.process__peoples {
+}
+.process__peoples-pic {
+  max-width: 100%;
+  height: auto;
+}
+.process__link {
+  @include adaptiveDesktopToMobile("margin-top", 50, 32);
+  margin-right: auto;
+  margin-left: auto;
+}
+.process__right-wrapper {
+  grid-row: span 2;
+}
+.process__list {
+  @include reset-list;
+}
+.process__item {
+  position: relative;
+
+  &:not(:last-child) {
+    @include adaptiveDesktopToMobile("margin-bottom", 60, 32);
+  }
+
+  &::after {
+    content: '01';
+    position: absolute;
+    top: 10px;
+    left: -60px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #C8DEFF;
+  }
+
+  &:nth-child(2) {
+    &::after {
+      content: '02';
+    }
+  }
+
+  &:nth-child(3) {
+    &::after {
+      content: '03';
+    }
+  }
+
+  &:nth-child(4) {
+    &::after {
+      content: '04';
+    }
+  }
+
+  @include viewport--sm {
+    &::after {
+      display: none;
+    }
+  }
+}
+.process__item-date {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile("font-size", 24, 18);
+  @include adaptiveDesktopToMobile("line-height", 34, 28);
+  margin: 0;
+  margin-bottom: 12px;
+  
+  width: fit-content;
+  color: $color-default-white;
+  padding: 0px 12px;
+  border-radius: 12px;
+  background-color: $color-dodger-blue;
+}
+.process__item-title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile("font-size", 38, 22);
+  @include adaptiveDesktopToMobile("line-height", 42, 32);
+  margin: 0;
+  @include adaptiveDesktopToMobile("margin-bottom", 12, 8);
+
+  .version-2 & {
+    @include adaptiveDesktopToMobile("margin-bottom", 12, 12);
+  }
+}
+.process__item-description {
+  @include adaptiveDesktopToMobile("font-size", 18, 16);
+  @include adaptiveDesktopToMobile("line-height", 32, 24);
+  font-family: $font-family-primary;;
+  margin: 0;
+
+  .version-2 & {
+    max-width: 580px;
+  }
+}

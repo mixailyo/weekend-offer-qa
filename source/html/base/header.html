@@ -1,35 +1,38 @@
-<header class="header @@if (context.mod) { header--@@mod }">
+<header class="header">
   <div class="container">
-    @@if (!context.index) {
-      <a class="header__logo" href="index.html" aria-label="Переход на главную">
-        Логотип
-      </a>
-    }
-    @@if (context.index) {
-      <span class="header__logo">
-        Логотип
-      </span>
-    }
-
-    <nav class="main-nav">
-      <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="#icon-burger"></use>
-        </svg>
-      </button>
-      <div class="main-nav__wrapper">
-        <ul class="main-nav__list">
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 0) { is-active }" @@if (context.headerActiveLinkIndex !== 0) { href="#" }>Страница 1</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 1) { is-active }" @@if (context.headerActiveLinkIndex !== 1) { href="#" }>Страница 2</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 2) { is-active }" @@if (context.headerActiveLinkIndex !== 2) { href="#" }>Страница 3</a>
-          </li>
-        </ul>
+    <div class="header__wrapper">
+      <div class="header__left-wrapper">
+        <a href="/" class="header__logo">
+          <svg
+            class="header__logo-pic"
+            width="40"
+            height="40"
+            aria-hidden="true"
+          >
+            <use xlink:href="#vk-logo"></use>
+          </svg>
+        </a>
+        <div class="header__content">
+          <div class="header__title">
+            Weekend Offer<br> для тестировщиков
+          </div>
+          <div class="header__subtitle">
+            Получите оффер в&nbsp;команду<br>
+            ВКонтакте всего за&nbsp;одни выходные
+          </div>
+          <div class="header__bottom-wrapper">
+            <div class="header__date">
+              <div class="header__date-numbers">18-19</div>
+              <div class="header__date-month">июня</div>
+              <div class="header__date-where">онлайн</div>
+            </div>
+            <a href="https://team.vk.company/vacancy/25607/" class="header__link btn btn--white" target="_blank">Участвовать</a>
+          </div>
+        </div>
       </div>
-    </nav>
+      <div class="header__right-wrapper">
+        <img src="img/svg/header-peoples.svg" width="447" height="590" class="header__peoples">
+      </div>
+    </div>
   </div>
 </header>

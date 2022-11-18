@@ -1,0 +1,121 @@
+.teams {
+  @include adaptiveDesktopToMobile('padding-top', 60, 30);
+}
+.teams__title {
+  max-width: 1100px;
+  @include adaptiveDesktopToMobile("font-size", 64, 28);
+  @include adaptiveDesktopToMobile("line-height", 72, 34);
+}
+.teams__list {
+  @include reset-list;
+
+  @include adaptiveDesktopToMobile('margin-top', 50, 25);
+}
+.teams__item {
+  background-color: $color-alice-blue;
+  border-radius: 12px;
+  @include adaptiveDesktopToMobile('padding', 30, 18);
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.teams__item-top-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.teams__item-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background-color: $color-default-white;
+  @include adaptiveDesktopToMobile('margin-right', 50, 0);
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+.teams__item-team {
+  display: flex;
+  align-items: center;
+
+  @include vp-1023 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.teams__item-team-name {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 38, 22);
+  @include adaptiveDesktopToMobile('line-height', 42, 26);
+  color: $color-dodger-blue;
+  @include adaptiveDesktopToMobile('margin-right', 40, 0);
+
+  @include vp-1023 {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+.teams__item-team-devices {
+  @include adaptiveDesktopToMobile('font-size', 20, 16);
+  @include adaptiveDesktopToMobile('line-height', 34, 24);
+
+  span {
+    &:not(:first-child) {
+      margin-left: 5px;
+
+      &::before {
+        content: '||';
+        margin-right: 5px;
+        color: $color-storm-grey;
+      }
+    }
+  }
+}
+.teams__item-arrow {
+  margin-left: auto;
+  transition: transform $trans-default;
+  @include adaptiveDesktopToMobile('width', 28, 14);
+
+  .is-active & {
+    transform: rotate(180deg);
+  }
+}
+.teams__item-description {
+  padding-left: 80px;
+  max-width: 750px;
+  @include adaptiveDesktopToMobile('font-size', 18, 16);
+  @include adaptiveDesktopToMobile('line-height', 32, 24);
+  font-family: $font-family-primary;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 30px;
+  }
+
+  ul {
+    list-style-type: disc;
+    @include adaptiveDesktopToMobile('padding-left', 20, 14);
+  }
+
+  li {
+    &::marker {
+      color: $color-dodger-blue;
+      background-color: $color-dodger-blue;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  @include vp-1023 {
+    padding-left: 0;
+  }
+}

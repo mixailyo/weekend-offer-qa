@@ -1,5 +1,124 @@
 .footer {
-  padding: 40px 0;
+  @include adaptiveDesktopToMobile("margin-top", 140, 60);
+  position: relative;
+  overflow: hidden;
+}
+.container {
+}
+.footer__title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile("font-size", 64, 22);
+  @include adaptiveDesktopToMobile("line-height", 72, 32);
+  max-width: 834px;
+  margin: 0;
+  @include adaptiveDesktopToMobile("margin-bottom", 40, 20);
+  z-index: 1;
+  position: relative;
 
-  background-color: $color-neon-blue;
+  .version-2 & {
+    @include adaptiveDesktopToMobile("margin-bottom", 230, 700);
+    max-width: 950px;
+    @include adaptiveDesktopToMobile("font-size", 64, 28);
+
+    @include viewport--ml {
+      margin-bottom: 45px;
+    }
+  }
+
+  .version-4 & {
+    max-width: 900px;
+  }
+}
+.section-title {
+}
+.footer__description {
+  margin: 0;
+  font-weight: 500;
+  @include adaptiveDesktopToMobile("font-size", 28, 18);
+  @include adaptiveDesktopToMobile("line-height", 34, 28);
+  max-width: 653px;
+  @include adaptiveDesktopToMobile("margin-bottom", 60, 32);
+  z-index: 1;
+  position: relative;
+}
+.footer__bottom-wrapper {
+  background-color: $color-dodger-blue;
+  @include adaptiveDesktopToMobile("padding-top", 60, 20);
+  padding-bottom: 150px;
+
+  @include viewport--ml {
+    padding-bottom: 0;
+  }
+}
+.footer__link {
+  @include viewport--md {
+    margin-bottom: 30px;
+    width: 100%;
+    @include adaptiveDesktopToMobile("font-size", 18, 16);
+    @include adaptiveDesktopToMobile("line-height", 34, 24);
+    height: 50px;
+    &::after {
+      width: 18px;
+      height: 18px;
+      right: 18px;
+    }
+
+    &:hover {
+      &::after {
+        animation: 0.5s btnArrowAnimation;
+      }
+    }
+  }
+}
+.btn {
+}
+.btn--big {
+  background-color: $color-default-white;
+  border-color: $color-default-white;
+  min-width: 274px;
+  height: 80px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 34px;
+  &::after {
+    width: 34px;
+    height: 34px;
+    right: 30px;
+  }
+  &:hover {
+    &::after {
+      animation: 0.5s btnBigArrowAnimation;
+    }
+  }
+}
+@keyframes btnBigArrowAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 34px -34px;
+  }
+  51% {
+    background-position: -34px 34px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.footer__peoples {
+  position: absolute;
+  bottom: -8px;
+  right: 40px;
+  z-index: 0;
+
+  @include viewport--ml {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.footer__peoples-pic {
+  @include viewport--sm {
+    @include adaptiveDesktopToMobile("height", 640, 295);
+  }
 }
